@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  
+  --color-gold: #C5A059;
+  --color-gold-light: #E5C78B;
+  --color-bronze: #8E6F3E;
+  --color-dark: #0F0F0F;
+  --color-dark-surface: #1A1A1A;
+  --color-vintage-cream: #F5F5F0;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-vintage-cream/90 font-sans antialiased selection:bg-gold selection:text-dark;
+  }
+}
+
+.glass {
+  @apply bg-white/[0.02] backdrop-blur-xl border border-white/5;
+}
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-gold-light via-gold to-bronze;
+}
+
+.bg-gradient-gold {
+  @apply bg-linear-to-r from-gold-light via-gold to-bronze;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-dark;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gold/20 rounded-full hover:bg-gold/40;
+}
